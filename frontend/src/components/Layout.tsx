@@ -1,5 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import DemoBanner from './DemoBanner';
 import {
   LayoutDashboard,
   Users,
@@ -10,7 +11,7 @@ import {
 } from 'lucide-react';
 
 const Layout = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, isDemoMode } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,6 +30,9 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Demo Mode Banner */}
+      {isDemoMode && <DemoBanner />}
+
       {/* Sidebar */}
       <aside className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg">
         <div className="p-6 border-b">
