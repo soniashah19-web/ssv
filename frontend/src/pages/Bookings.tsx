@@ -7,7 +7,6 @@ import { format } from 'date-fns';
 const Bookings = () => {
   const [bookings, setBookings] = useState<any[]>([]);
   const [customers, setCustomers] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     customerId: '',
@@ -30,8 +29,6 @@ const Bookings = () => {
       setBookings(response.data.bookings);
     } catch (error) {
       toast.error('Failed to load bookings');
-    } finally {
-      setIsLoading(false);
     }
   };
 

@@ -6,7 +6,6 @@ import { Plus, Search, Mail, Phone } from 'lucide-react';
 
 const Customers = () => {
   const [customers, setCustomers] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterPaymentStatus, setFilterPaymentStatus] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -34,8 +33,6 @@ const Customers = () => {
       setCustomers(response.data.customers);
     } catch (error) {
       toast.error('Failed to load customers');
-    } finally {
-      setIsLoading(false);
     }
   };
 

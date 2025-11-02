@@ -9,7 +9,6 @@ import {
   DollarSign,
   Calendar,
   FileText,
-  MessageSquare,
 } from 'lucide-react';
 import { format } from 'date-fns';
 

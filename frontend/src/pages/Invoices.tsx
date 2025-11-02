@@ -7,7 +7,6 @@ import { format } from 'date-fns';
 const Invoices = () => {
   const [invoices, setInvoices] = useState<any[]>([]);
   const [customers, setCustomers] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [filterStatus, setFilterStatus] = useState('');
   const [formData, setFormData] = useState({
@@ -33,8 +32,6 @@ const Invoices = () => {
       setInvoices(response.data.invoices);
     } catch (error) {
       toast.error('Failed to load invoices');
-    } finally {
-      setIsLoading(false);
     }
   };
 
